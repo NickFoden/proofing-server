@@ -33,6 +33,9 @@ const { Album, Photo } = require("./models.js");
 app.use(bodyParser.json());
 app.use(morgan("common"));
 
+//Need urlencoded for nodemailer
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(
   cors({
     origin: CLIENT_ORIGIN
@@ -258,6 +261,7 @@ app.use(function(req, res, next) {
 //NodeMailer for contact form
 
 app.post("/send", (req, res) => {
+  console.log(req.body);
   const msg = `
     <p>You have a new contact</p>
     <h3>Contact Details</h3>
