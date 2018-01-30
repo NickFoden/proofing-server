@@ -261,7 +261,6 @@ app.use(function(req, res, next) {
 });
 
 //NodeMailer for contact form
-
 app.post("/send", (req, res) => {
   console.log(req.body);
   const msg = `
