@@ -24,8 +24,6 @@ const {
   sendGridOptions
 } = require("./config");
 
-console.log(sendGridOptions);
-
 let cloudinary = require("cloudinary");
 
 mongoose.Promise = global.Promise;
